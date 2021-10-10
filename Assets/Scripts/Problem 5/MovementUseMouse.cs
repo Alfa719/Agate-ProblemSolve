@@ -6,7 +6,6 @@ public class MovementUseMouse : MonoBehaviour
 {
     public float speed = 5f;
 
-    Vector2 movement;
     private Rigidbody2D rigidBody2D;
     void Start()
     {
@@ -20,10 +19,8 @@ public class MovementUseMouse : MonoBehaviour
     void Movement()
     {
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         Vector2 position = transform.position;
         cursorPos = cursorPos.normalized * speed * Time.deltaTime;
         rigidBody2D.MovePosition(position + cursorPos);
-
     }
 }
